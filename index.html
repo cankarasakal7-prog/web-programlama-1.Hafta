@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web tasarım dersi 1. hafta ödevi: İnternet ve web tasarımının temel kavramları.">
+  <title>1. Hafta Web Tasarım Ödevi | Temel Kavramlar</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5e6b82;
+      --primary: #3157d5;
+      --primary-dark: #203fa8;
+      --line: #e3e9f3;
+      --soft: #edf2ff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      color: white;
+      padding: 64px 20px 58px;
+      text-align: center;
+      background: linear-gradient(135deg, #172b67, #3157d5 65%, #6685ed);
+    }
+    header .eyebrow {
+      margin: 0 0 10px;
+      color: #dbe4ff;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.2;
+    }
+    header p {
+      max-width: 680px;
+      margin: 16px auto 0;
+      color: #e7ecff;
+      font-size: 1.05rem;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    nav a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 20px;
+    }
+    nav a:hover { background: var(--soft); }
+    main {
+      width: min(1050px, calc(100% - 32px));
+      margin: 34px auto 60px;
+    }
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 5px 18px rgba(25, 45, 90, .04);
+    }
+    .intro p { margin: 0; color: var(--muted); }
+    section {
+      margin: 24px 0;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 7px 24px rgba(25, 45, 90, .045);
+      scroll-margin-top: 80px;
+    }
+    section h2 {
+      margin: 0 0 20px;
+      color: var(--primary-dark);
+      font-size: 1.45rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      color: white;
+      background: var(--primary);
+      border-radius: 11px;
+      font-size: 1rem;
+    }
+    .terms {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .term {
+      padding: 16px 18px;
+      background: #fbfcff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+    .term h3 {
+      margin: 0 0 6px;
+      color: #243d91;
+      font-size: 1.02rem;
+    }
+    .term p { margin: 0; color: var(--muted); font-size: .96rem; }
+    .extensions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .extension {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 15px;
+      background: #fbfcff;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+    }
+    .extension strong {
+      min-width: 58px;
+      color: var(--primary-dark);
+      font-size: 1.02rem;
+    }
+    .extension span { color: var(--muted); }
+    footer {
+      padding: 25px 16px;
+      text-align: center;
+      color: #dce5ff;
+      background: #172b67;
+      font-size: .9rem;
+    }
+    @media (max-width: 700px) {
+      header { padding: 48px 18px; }
+      .terms, .extensions { grid-template-columns: 1fr; }
+      section { padding: 21px 17px; }
+      nav { gap: 2px; }
+      nav a { font-size: .82rem; padding: 6px 9px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Web Tasarım Dersi · 1. Hafta</p>
+    <h1>Temel Kavramlar</h1>
+    <p>İnternetin çalışma mantığını, web sitelerinin yapısını ve web geliştirme alanında kullanılan temel terimleri öğrenelim.</p>
+  </header>
+
+  <nav aria-label="Sayfa bölümleri">
+    <a href="#internet">İnternet</a>
+    <a href="#adres">Adres ve Konum</a>
+    <a href="#yapi">Sayfa Yapısı</a>
+    <a href="#roller">Geliştirici Rolleri</a>
+    <a href="#uzantilar">Alan Adı Uzantıları</a>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <p>Bu ödevde internet ve web tasarımının temel yapı taşları açıklanmıştır. Konular, daha kolay okunabilmesi için başlıklara ayrılmıştır.</p>
+    </div>
+
+    <section id="internet">
+      <h2><span class="number">1</span> İnternet'in Temel Yapı Taşları</h2>
+      <div class="terms">
+        <article class="term"><h3>IP Adresi (Internet Protocol Address)</h3><p>İnternete bağlı her bir cihazı (bilgisayar, sunucu, telefon vb.) tanımlayan sayısal etikettir.</p></article>
+        <article class="term"><h3>DNS (Domain Name System)</h3><p>İnsanların okuyabildiği alan adlarını (google.com gibi), bilgisayarların kullandığı IP adreslerine çeviren internetin telefon rehberidir.</p></article>
+        <article class="term"><h3>Sunucu (Server)</h3><p>Web sitelerini, dosyaları veya uygulamaları barındıran ve internet üzerinden gelen isteklere yanıt veren bilgisayardır.</p></article>
+        <article class="term"><h3>HTTP (Hypertext Transfer Protocol)</h3><p>Web tarayıcısı ile sunucu arasında web sayfası verilerinin nasıl aktarılacağını belirleyen iletişim kuralıdır.</p></article>
+        <article class="term"><h3>HTTPS (Hypertext Transfer Protocol Secure)</h3><p>HTTP'nin, tarayıcı ile sunucu arasındaki veri iletişimini şifreleyerek daha güvenli hâle getiren sürümüdür.</p></article>
+      </div>
+    </section>
+
+    <section id="adres">
+      <h2><span class="number">2</span> Web Sitesinin Adresi ve Konumu</h2>
+      <div class="terms">
+        <article class="term"><h3>Domain (Alan Adı)</h3><p>Bir web sitesinin karmaşık IP adresi yerine kullanılan, akılda kalıcı ve kolay yazılabilen ismidir. Örnek: google.com.</p></article>
+        <article class="term"><h3>URL (Uniform Resource Locator)</h3><p>Bir web kaynağının (belirli bir sayfa, resim veya dosya) internetteki tam ve özel adresini gösterir.</p></article>
+        <article class="term"><h3>WWW (World Wide Web)</h3><p>İnternet üzerinde bulunan ve URL'ler aracılığıyla erişilebilen, birbirine bağlı web sayfaları ve içeriklerden oluşan sistemdir.</p></article>
+        <article class="term"><h3>Hosting (Barındırma)</h3><p>Bir web sitesinin dosya ve verilerinin internet üzerinden erişilebilir olması için sunucuda saklanması hizmetidir.</p></article>
+        <article class="term"><h3>FTP (File Transfer Protocol)</h3><p>Bir bilgisayar ile sunucu arasında dosya yüklemek veya indirmek için kullanılan ağ protokolüdür.</p></article>
+      </div>
+    </section>
+
+    <section id="yapi">
+      <h2><span class="number">3</span> Web Sayfasının Yapısı ve Görünümü</h2>
+      <div class="terms">
+        <article class="term"><h3>HTML (Hypertext Markup Language)</h3><p>Bir web sayfasının iskeletini; başlık, paragraf ve resim gibi temel içeriklerini oluşturan işaretleme dilidir.</p></article>
+        <article class="term"><h3>Etiket (Tag)</h3><p>HTML'de bir elementi tanımlamak için kullanılan, küçüktür ve büyüktür (&lt; &gt;) işaretleri arasındaki ifadelerdir. Örnek: &lt;p&gt; paragraf etiketi.</p></article>
+        <article class="term"><h3>CSS (Cascading Style Sheets)</h3><p>HTML ile oluşturulan web sayfasının renk, yazı tipi, yerleşim ve diğer görsel özelliklerini belirler.</p></article>
+        <article class="term"><h3>JavaScript (JS)</h3><p>Web sayfalarına butonlar, animasyonlar ve form kontrolleri gibi etkileşimli özellikler kazandıran programlama dilidir.</p></article>
+      </div>
+    </section>
+
+    <section id="roller">
+      <h2><span class="number">4</span> Web Geliştirici Rolleri ve Araçları</h2>
+      <div class="terms">
+        <article class="term"><h3>Front-end (Ön Yüz)</h3><p>Bir web sitesinin kullanıcının tarayıcıda gördüğü ve etkileşimde bulunduğu arayüz kısmını geliştiren alandır.</p></article>
+        <article class="term"><h3>Back-end (Arka Yüz)</h3><p>Bir web sitesinin veritabanı, sunucu işlemleri ve iş mantığı gibi kullanıcı tarafından doğrudan görülmeyen bölümlerini geliştirir.</p></article>
+        <article class="term"><h3>Full-stack (Tam Yığın)</h3><p>Bir web projesinin hem front-end hem de back-end geliştirmesini yapabilen uzmanlık alanıdır.</p></article>
+        <article class="term"><h3>Tarayıcı (Browser)</h3><p>Google Chrome ve Firefox gibi web sayfalarını görüntülememizi ve onlarla etkileşim kurmamızı sağlayan yazılımlardır.</p></article>
+        <article class="term"><h3>Editör (Kod Editörü)</h3><p>HTML ve CSS gibi kodları yazmak, düzenlemek ve yönetmek için kullanılan programdır. Örnek: Visual Studio Code (VS Code).</p></article>
+        <article class="term"><h3>WYSIWYG Editör</h3><p>Kod yazmadan, sürükle-bırak gibi görsel araçlarla web sayfası oluşturmayı sağlayan editördür. “Ne Görürsen Onu Alırsın” anlamına gelir.</p></article>
+      </div>
+    </section>
+
+    <section id="uzantilar">
+      <h2><span class="number">5</span> En Yaygın Alan Adı Uzantıları</h2>
+      <div class="extensions">
+        <div class="extension"><strong>.gov</strong><span>Government – Devlet kurumları</span></div>
+        <div class="extension"><strong>.edu</strong><span>Education – Eğitim kurumları</span></div>
+        <div class="extension"><strong>.k12</strong><span>Kindergarten–12 – Temel eğitim ve ortaöğretim kurumları</span></div>
+        <div class="extension"><strong>.org</strong><span>Organization – Genellikle ticari olmayan kuruluşlar</span></div>
+        <div class="extension"><strong>.com</strong><span>Commercial – Ticari kuruluşlar</span></div>
+        <div class="extension"><strong>.mil</strong><span>Military – Askerî kurumlar</span></div>
+        <div class="extension"><strong>.net</strong><span>Network – Ağ ve internet hizmetleriyle ilişkili siteler</span></div>
+        <div class="extension"><strong>.ac</strong><span>Academic – Akademik kuruluşlarla ilişkili uzantı</span></div>
+        <div class="extension"><strong>.int</strong><span>International – Uluslararası kuruluşlar</span></div>
+        <div class="extension"><strong>.info</strong><span>Information – Bilgi içerikli web siteleri</span></div>
+        <div class="extension"><strong>.biz</strong><span>Business – İş ve ticaret amaçlı siteler</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Web Tasarım Dersi · 1. Hafta Ödevi</p>
+  </footer>
+</body>
+</html>
